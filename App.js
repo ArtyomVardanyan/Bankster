@@ -8,8 +8,8 @@ import TransferPage from './src/components/pages/TransferPage';
 export default function App() {
   return (
     <View style={styles.container}>
-      <UserPage />
-      <LoginPage />
+      {/* <UserPage />
+      <LoginPage /> */}
         <TransferPage />
     </View>
   );
