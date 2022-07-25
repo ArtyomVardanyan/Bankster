@@ -1,9 +1,9 @@
 import { Text, View, StyleSheet, TouchableHighlight } from 'react-native'
 import React from 'react';
 
-const Button = ({children}) => {
+const Button = ({children, ...props}) => {
     return (
-        <TouchableHighlight style={styles.container}>
+        <TouchableHighlight {...props} style={styles.container}>
             <View style={styles.button}>
                 <Text style={styles.text}>{children}</Text>
             </View>

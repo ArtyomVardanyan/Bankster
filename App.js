@@ -1,4 +1,3 @@
-import { StyleSheet, View } from 'react-native';
 import UserPage from './src/components/pages/UserPage';
 import LoginPage from './src/components/pages/LoginPage';
 import { StatusBar } from 'expo-status-bar';
