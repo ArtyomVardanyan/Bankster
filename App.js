@@ -1,4 +1,3 @@
-import { StyleSheet, View } from 'react-native';
 import UserPage from './src/components/pages/UserPage';
 import LoginPage from './src/components/pages/LoginPage';
 import { StatusBar } from 'expo-status-bar';
@@ -9,8 +8,8 @@ import TransferPage from './src/components/pages/TransferPage';
 export default function App() {
   return (
     <View style={styles.container}>
-      <UserPage />
-      <LoginPage />
+      {/* <UserPage />
+      <LoginPage /> */}
         <TransferPage />
     </View>
   );
