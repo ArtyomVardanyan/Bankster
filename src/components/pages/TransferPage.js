@@ -6,7 +6,7 @@ const TransferPage = () => {
     return (
         <View style={styles.container}>
             <View style={styles.navigate}> 
-            <Text style={styles.heading}>
+            <Text onPress={() => navigation.navigate('Login')} style={styles.heading}>
                 <Ionicons style={styles.heading} name="md-chevron-back" size={24} color="black" />
             </Text>
                 <Text style={styles.transfer}>Transfer</Text>

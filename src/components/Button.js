@@ -1,11 +1,13 @@
 import { Text, View, StyleSheet, TouchableHighlight } from 'react-native'
 import React from 'react';
 
-const Button = ({children ,...props}) => {
+const Button = ({ children, type, ...props }) => {
+    console.log(type);
     return (
-        <TouchableHighlight {...props} style={styles.container}>
-            <View style={styles.button}>
-                <Text style={styles.text}>{children}</Text>
+
+        <TouchableHighlight {...props}>
+            <View style={type === 'easy' ? styles.easy : styles.button}>
+                <Text style={type === 'easy' ? styles.easyText : styles.buttonText}>{children}</Text>
             </View>
         </TouchableHighlight>
     )
@@ -19,9 +21,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#ECBF4A',
         borderRadius: 10,
     },
-
-    text: {
+    easyText: {
+        color: '#ECBF4A',
+        borderRadius: 10,
+    },
+    buttonText: {
         color: '#000'
+    },
+    text: {
+        color: '#fff'
     }
 });
 
