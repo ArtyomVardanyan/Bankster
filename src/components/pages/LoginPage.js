@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#120E0B',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '80%',
+    width: '100%',
   },
   input: {
-    width: '80vw',
+    width: 350,
     backgroundColor: '#1E2021',
     borderRadius: 10,
     paddingVertical: 15,
@@ -37,10 +37,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   text: {
-    width: '80vw',
+    width: 350,
     marginTop: '-15px',
     alignItems: 'flex-end',
-    // flexDirection: 'column',
     marginTop: 5,
   }
 });

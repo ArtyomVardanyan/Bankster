@@ -24,27 +24,26 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#120E0B',
-        width: '90%',
+        width: '80%',
         
     },
     navigate: {
         alignItems: 'center',
-        marginTop: '20px',
+        marginTop: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
     heading: {
         fontWeight: 'bold',
         color: '#fff',
-        marginLeft: '0px',
     },
     transfer: {
         fontWeight: 'bold',
         color: '#fff',
-        marginRight: '130px',
+        marginRight: 130,
     },
     name: {
-        marginTop: '200px',
+        marginTop: 200,
         alignItems: 'center',
         fontWeight: 'bold',
     },
@@ -52,11 +51,11 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
     money: {
-        marginTop: '20px',
+        marginTop: 20,
         alignItems: 'center',
         fontWeight: 'bold',
         color: '#fff',
-        marginBottom: '100px',
+        marginBottom: 100,
         
 
     },

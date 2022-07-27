@@ -10,7 +10,8 @@ const RegisterPage = ({ navigation }) => {
       <TextInput placeholderTextColor="#ABABAC" type='password' placeholder='Password' style={styles.input} />
       <Button style={styles.btn} onPress={() => navigation.navigate('Login')}>Registration</Button>
       <View style={styles.text}>
-        <Text style={styles.question}>Do you have an account? <Button type='easy' onPress={() => navigation.navigate('Login')}>Login</Button></Text>
+        <Text style={styles.question}>Do you have an account? </Text>
+        <Button type='easy' onPress={() => navigation.navigate('Login')}>Login</Button>
       </View>
     </View>
   )
@@ -24,10 +25,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
 
-    width: '90%',
+    width: '100%',
   },
   input: {
-    width: '80vw',
+    width: 350,
     backgroundColor: '#1E2021',
     borderRadius: 10,
     paddingVertical: 15,
@@ -39,10 +40,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   text: {
-    width: '80vw',
-    marginTop: '-15px',
-    alignItems: 'flex-end',
-    flexDirection: 'column',
+    width: 350,
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
     marginTop: 5,
   },
   question: {

@@ -16,14 +16,13 @@ const Button = ({ children, type, ...props }) => {
 const styles = StyleSheet.create({
     button: {
         alignItems: "center",
-        width: '80vw',
+        width: 350,
         padding: 15,
         backgroundColor: '#ECBF4A',
         borderRadius: 10,
     },
     easyText: {
         color: '#ECBF4A',
-        borderRadius: 10,
     },
     buttonText: {
         color: '#000'

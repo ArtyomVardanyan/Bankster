@@ -15,7 +15,7 @@ export default function UserPage() {
   return (
     <View style={styles.container}>
         <View style={styles.personInfo}>
-            <FontAwesome name="user-circle" size={90} color="white" />
+            <FontAwesome name="user-circle" color="white" />
             <Text style={styles.anun}>{name}</Text>
         </View>
         <View style={styles.changeName}>
