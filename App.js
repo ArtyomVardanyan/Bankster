@@ -13,7 +13,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Login">
+        <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Transfer">
           <Stack.Screen name="Login" component={LoginPage} />
           <Stack.Screen name="User" component={UserPage} />
           <Stack.Screen name="Transfer" component={TransferPage} />
