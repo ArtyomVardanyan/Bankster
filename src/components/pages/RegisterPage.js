@@ -5,6 +5,7 @@ import Button from '../Button'
 const RegisterPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Registration</Text>
       <TextInput placeholderTextColor="#ABABAC" placeholder='Email' style={styles.input} />
       <TextInput placeholderTextColor="#ABABAC" placeholder='Name' style={styles.input} />
       <TextInput placeholderTextColor="#ABABAC" type='password' placeholder='Password' style={styles.input} />
@@ -38,6 +39,12 @@ const styles = StyleSheet.create({
   },
   btn: {
     marginBottom: 15,
+  },
+  title: {
+    color: '#fff',
+    marginBottom: 25,
+    fontWeight: 'bold',
+    fontSize: 25,
   },
   text: {
     width: 350,
