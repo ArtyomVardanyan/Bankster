@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Image, Text, SafeAreaView, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const HomePage = ({ navigation }) => {
@@ -14,8 +14,8 @@ const HomePage = ({ navigation }) => {
                     />
                     <Text style={styles.name}>&nbsp;&nbsp;&nbsp;<Text style={styles.bold}>Hello,</Text> Vaxo</Text>
                 </View>
-                <Text onPress={() => {navigation.navigate('Login')}} style={styles.icon}>
-                <MaterialIcons name="logout" size={24} color="#5A5857" />
+                <Text onPress={() => { navigation.navigate('Login') }} style={styles.icon}>
+                    <MaterialIcons name="logout" size={24} color="#5A5857" />
                 </Text>
             </View>
             <View style={styles.cart}>
@@ -30,6 +30,114 @@ const HomePage = ({ navigation }) => {
                     <Text style={styles.infoCode}>• 3952</Text>
                     <Text style={styles.infoDate}> 09 / 28 </Text>
                 </View>
+            </View>
+            <View style={styles.friends}>
+                <View style={styles.friendsContet}>
+                    <Image
+                        style={styles.friendsLogo}
+                        source={{
+                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                        }}
+                    />
+                    <Text style={styles.friendsName}>Babken</Text>
+                </View>
+                <View style={styles.friendsContet}>
+                    <Image
+                        style={styles.friendsLogo}
+                        source={{
+                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                        }}
+                    />
+                    <Text style={styles.friendsName}>Babken</Text>
+                </View><View style={styles.friendsContet}>
+                    <Image
+                        style={styles.friendsLogo}
+                        source={{
+                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                        }}
+                    />
+                    <Text style={styles.friendsName}>Babken</Text>
+                </View><View style={styles.friendsContet}>
+                    <Image
+                        style={styles.friendsLogo}
+                        source={{
+                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                        }}
+                    />
+                    <Text style={styles.friendsName}>Babken</Text>
+                </View><View style={styles.friendsContet}>
+                    <Image
+                        style={styles.friendsLogo}
+                        source={{
+                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                        }}
+                    />
+                    <Text style={styles.friendsName}>Babken</Text>
+                </View>
+            </View>
+            <View style={styles.transactions}>
+                <Text style={styles.transactionsTitle}>Last <Text style={styles.transactionsSpan}>Transactions</Text></Text>
+                <SafeAreaView>
+                    <ScrollView>
+                        <View style={styles.transactionsElement}>
+                            <View style={styles.transactionsInfo}>
+                                <Image
+                                    style={styles.logo}
+                                    source={{
+                                        uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                                    }}
+                                />
+                                <Text style={styles.transactionsName}>&nbsp;&nbsp;&nbsp;Bagrat</Text>
+                            </View>
+                            <View>
+                                <Text style={styles.transactionsPrice}>- $450</Text>
+                            </View>
+                        </View>
+                        <View style={styles.transactionsElement}>
+                            <View style={styles.transactionsInfo}>
+                                <Image
+                                    style={styles.logo}
+                                    source={{
+                                        uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                                    }}
+                                />
+                                <Text style={styles.transactionsName}>&nbsp;&nbsp;&nbsp;Bagrat</Text>
+                            </View>
+                            <View>
+                                <Text style={styles.transactionsPrice}>- $450</Text>
+                            </View>
+                        </View>
+                        <View style={styles.transactionsElement}>
+                            <View style={styles.transactionsInfo}>
+                                <Image
+                                    style={styles.logo}
+                                    source={{
+                                        uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                                    }}
+                                />
+                                <Text style={styles.transactionsName}>&nbsp;&nbsp;&nbsp;Bagrat</Text>
+                            </View>
+                            <View>
+                                <Text style={styles.transactionsPrice}>- $450</Text>
+                            </View>
+                        </View>
+                        <View style={styles.transactionsElement}>
+                            <View style={styles.transactionsInfo}>
+                                <Image
+                                    style={styles.logo}
+                                    source={{
+                                        uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                                    }}
+                                />
+                                <Text style={styles.transactionsName}>&nbsp;&nbsp;&nbsp;Bagrat</Text>
+                            </View>
+                            <View>
+                                <Text style={styles.transactionsPrice}>- $450</Text>
+                            </View>
+                        </View>
+                    </ScrollView>
+                </SafeAreaView>
+
             </View>
         </View>
     )
@@ -99,6 +207,58 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
+    friends: {
+        marginTop: 50,
+        flexDirection: 'row',
+        width: 350,
+    },
+    friendsLogo: {
+        width: 80,
+        height: 80,
+    },
+    friendsContet: {
+        alignItems: 'center',
+        marginRight: 25,
+    },
+    friendsName: {
+        color: '#fff',
+        marginTop: 10,
+        color: '#5A5857',
+    },
+    transactions: {
+        width: 350,
+        marginTop: 50,
+    },
+    transactionsTitle: {
+        color: '#fff',
+        fontSize: 20,
+    },
+    transactionsSpan: {
+        color: '#5A5857',
+
+    },
+    transactionsElement: {
+        marginTop: 20,
+        padding: 20,
+        width: 350,
+        height: 75,
+        backgroundColor: '#1F1D1B',
+        borderRadius: 25,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    transactionsInfo: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    transactionsName: {
+        color: '#5A5857',
+    },
+    transactionsPrice: {
+        color: '#fff',
+        fontSize: 18,
+    }
 });
 
 export default HomePage;
