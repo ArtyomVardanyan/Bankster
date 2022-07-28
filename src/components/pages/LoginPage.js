@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   input: {
-    width: '80vw',
+    width: 350,
     backgroundColor: '#1E2021',
     borderRadius: 10,
     paddingVertical: 15,
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   text: {
-    width: '80vw',
-    marginTop: '-15px',
+    width: 350,
+    marginTop: -15,
     alignItems: 'flex-end',
     // flexDirection: 'column',
     marginTop: 5,

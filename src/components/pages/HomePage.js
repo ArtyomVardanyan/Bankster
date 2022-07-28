@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
         color: '#fff'
     },
     hello: {
-        width: '80vw',
+        width: 350,
         alignItems: 'center',
         flexDirection: 'row',
     },
     cart: {
-        width: '80vw',
-        height: '20vh',
+        width: 350,
+        // height: '20vh',
         backgroundColor: '#1F1D1B',
         flexDirection: 'row',
         justifyContent: 'flex-end',

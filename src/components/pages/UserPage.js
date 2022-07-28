@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   personInfo: {
     marginTop: 200,
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
   },
   anun: {
       color: '#fff',
