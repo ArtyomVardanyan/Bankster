@@ -1,4 +1,4 @@
-import { TextInput, View, StyleSheet, TouchableHighlight } from 'react-native'
+import { TextInput, View, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import Button from '../Button'
 
@@ -6,6 +6,7 @@ const LoginPage = ({ navigation }) => {
   
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>LogIn</Text>
       <TextInput placeholderTextColor="#ABABAC" placeholder='Login' style={styles.input} />
       <TextInput placeholderTextColor="#ABABAC" placeholder='Password' style={styles.input} />
       <Button style={styles.btn} onPress={() => navigation.navigate('Home')}>Login</Button>
@@ -35,6 +36,12 @@ const styles = StyleSheet.create({
   },
   btn: {
     marginBottom: 15,
+  },
+  title: {
+    color: '#fff',
+    marginBottom: 25,
+    fontWeight: 'bold',
+    fontSize: 25,
   },
   text: {
     width: 350,
