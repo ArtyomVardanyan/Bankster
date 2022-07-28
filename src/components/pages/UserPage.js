@@ -1,7 +1,9 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import Button from '../Button';
 import { useState } from 'react';
+
 
 export default function UserPage() {
   const [value, setValue] = useState()
@@ -14,6 +16,7 @@ export default function UserPage() {
 
   return (
     <View style={styles.container}>
+      <Ionicons name="arrow-back" size={30} color="#fff" style={styles.backIcon} onPress={() => navigation.navigate('Home')}/>
         <View style={styles.personInfo}>
             <FontAwesome name="user-circle" size={90} color="white" />
             <Text style={styles.anun}>{name}</Text>
@@ -36,6 +39,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: 'flex-start',
     flexDirection: 'column',
+  },
+  backIcon: {
+    alignSelf: 'flex-start',
+    top: 50,
   },
   personInfo: {
     marginTop: 200,

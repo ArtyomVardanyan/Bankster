@@ -16,7 +16,7 @@ const Button = ({ children, type, ...props }) => {
 const styles = StyleSheet.create({
     button: {
         alignItems: "center",
-        width: '80vw',
+        width: 300,
         padding: 15,
         backgroundColor: '#ECBF4A',
         borderRadius: 10,
