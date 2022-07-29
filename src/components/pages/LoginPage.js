@@ -1,19 +1,26 @@
 import { TextInput, View, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import Button from '../Button'
+import { auto } from 'eol';
 
 const LoginPage = ({ navigation }) => {
-  
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>LogIn</Text>
-      <TextInput placeholderTextColor="#ABABAC" placeholder='Login' style={styles.input} />
-      <TextInput placeholderTextColor="#ABABAC" placeholder='Password' style={styles.input} />
-      <Button style={styles.btn} onPress={() => navigation.navigate('Home')}>Login</Button>
-      <View style={styles.text}>
-       <Button type='easy' onPress={() => {navigation.navigate('Register')}}>Registration</Button>
+    <>
+      <View style={styles.container}>
+        <Text style={styles.title}>LogIn</Text>
+        <TextInput placeholderTextColor="#ABABAC" placeholder='Login' style={styles.input} />
+        <TextInput placeholderTextColor="#ABABAC" placeholder='Password' style={styles.input} />
+        <Button style={styles.btn} onPress={() => navigation.navigate('Home')}>Login</Button>
+        <View style={styles.text}>
+          <Button type='easy' onPress={() => { navigation.navigate('Register') }}>Registration</Button>
+        </View>
+
       </View>
-    </View>
+      <View style={styles.version}>
+        <Text style={styles.versionText}>Banktser version 1.0</Text>
+      </View>
+      </>
   )
 }
 
@@ -48,6 +55,16 @@ const styles = StyleSheet.create({
     marginTop: '-15px',
     alignItems: 'flex-end',
     marginTop: 5,
+  },
+  version: {
+    marginTop: 'auto',
+    backgroundColor: '#120E0B',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingBottom: 15,
+  },
+  versionText: {
+    color: "#ABABAC",
   }
 });
 

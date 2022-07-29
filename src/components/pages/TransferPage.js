@@ -1,21 +1,38 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { useState } from 'react'
+import { StyleSheet, View, Text, Image, TextInput, TouchableHighlight } from 'react-native';
+import Button from '../Button'
 import { Ionicons } from '@expo/vector-icons';
 
-const TransferPage = () => {
+
+const TransferPage = ({ navigation }) => {
+    const [money, setMoney] = useState(20)
+
     return (
         <View style={styles.container}>
-            <View style={styles.navigate}> 
-            <Text onPress={() => navigation.navigate('Login')} style={styles.heading}>
-                <Ionicons style={styles.heading} name="md-chevron-back" size={24} color="black" />
-            </Text>
-                <Text style={styles.transfer}>Transfer</Text>
+            <View style={styles.navigate}>
+                <TouchableHighlight onPress={() => { navigation.navigate('Home') }}>
+                    <View style={styles.header}>
+                        <Ionicons name="md-chevron-back" size={24} color="white" />
+                        <Text style={styles.user}>Home</Text>
+                    </View>
+                </TouchableHighlight>
             </View>
+            <Image
+                style={styles.logo}
+                source={{
+                    uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                }}
+            />
             <View style={styles.name}>
-                <Text style={styles.nameText}>Mikayel Muradyan</Text>
+                <Text style={styles.nameText}>Your name</Text>
             </View>
-            <View ><Text style={styles.money}>$100,00</Text></View>
-            <View ><Text style={styles.numbers}>1 2 3</Text></View>
+            <View style={styles.money}>
+                <Text style={styles.money}>$54.567</Text>
+            </View>
+            <TextInput placeholderTextColor="#ABABAC" onChange={(e) => setMoney(e.target.value)} placeholder='Enter money' style={styles.input} />
+            <View>
+                <Button style={styles.btn} onPress={() => navigation.navigate('Transfer')}>${money} Pay</Button>
+            </View>
         </View>
 
     );
@@ -23,48 +40,83 @@ const TransferPage = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
         backgroundColor: '#120E0B',
-        width: '80%',
-        
+        alignItems: 'center',
+        paddingTop: 50,
     },
     navigate: {
         alignItems: 'center',
         marginTop: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        width: 350,
     },
-    heading: {
+    back: {
         fontWeight: 'bold',
         color: '#fff',
+        width: 350,
     },
     transfer: {
         fontWeight: 'bold',
         color: '#fff',
-        marginRight: 130,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: 475,
     },
-    name: {
-        marginTop: 200,
-        alignItems: 'center',
-        fontWeight: 'bold',
-    },
-    nameText:{
-        color: '#fff',
-    },
-    money: {
+    logo: {
+        width: 100,
+        height: 100,
         marginTop: 20,
         alignItems: 'center',
+        marginTop: 150,
+    },
+    name: {
+        marginTop: 20,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 350,
+    },
+    nameText: {
+        color: '#fff',
+        fontWeight: 'bold',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 15,
+        backgroundColor: '#1F1D1B',
+    },
+    money: {
+        alignItems: 'center',
+        marginTop: 10,
+        color: '#fff',
+        flexDirection: 'row',
+        marginBottom: 10,
+        fontSize: 35,
+    },
+    input: {
+        width: 350,
+        backgroundColor: '#1E2021',
+        borderRadius: 10,
+        paddingVertical: 15,
+        paddingHorizontal: 17,
+        marginBottom: 15,
+        color: '#fff'
+    },
+    btn: {
+        marginBottom: 15,
+    },
+    header: {
+        flexDirection: "row",
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        width: 350,
+    },
+    user: {
         fontWeight: 'bold',
         color: '#fff',
-        marginBottom: 100,
-        
-
+        fontSize: 23,
     },
-    numbers: {
-        alignItems: 'center',
-        color: "#fff",
-    }
-
-
 });
 
 export default TransferPage;

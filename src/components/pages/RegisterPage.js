@@ -4,17 +4,22 @@ import Button from '../Button'
 
 const RegisterPage = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Registration</Text>
-      <TextInput placeholderTextColor="#ABABAC" placeholder='Email' style={styles.input} />
-      <TextInput placeholderTextColor="#ABABAC" placeholder='Name' style={styles.input} />
-      <TextInput placeholderTextColor="#ABABAC" type='password' placeholder='Password' style={styles.input} />
-      <Button style={styles.btn} onPress={() => navigation.navigate('Login')}>Registration</Button>
-      <View style={styles.text}>
-        <Text style={styles.question}>Do you have an account? </Text>
-        <Button type='easy' onPress={() => navigation.navigate('Login')}>Login</Button>
+    <>
+      <View style={styles.container}>
+        <Text style={styles.title}>Registration</Text>
+        <TextInput placeholderTextColor="#ABABAC" placeholder='Email' style={styles.input} />
+        <TextInput placeholderTextColor="#ABABAC" placeholder='Name' style={styles.input} />
+        <TextInput placeholderTextColor="#ABABAC" type='password' placeholder='Password' style={styles.input} />
+        <Button style={styles.btn} onPress={() => navigation.navigate('Login')}>Registration</Button>
+        <View style={styles.text}>
+          <Text style={styles.question}>Do you have an account? </Text>
+          <Button type='easy' onPress={() => navigation.navigate('Login')}>Login</Button>
+        </View>
       </View>
-    </View>
+      <View style={styles.version}>
+        <Text style={styles.versionText}>Banktser version 1.0</Text>
+      </View>
+    </>
   )
 }
 
@@ -54,6 +59,16 @@ const styles = StyleSheet.create({
   },
   question: {
     color: '#fff',
+  },
+  version: {
+    marginTop: 'auto',
+    backgroundColor: '#120E0B',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingBottom: 15,
+  },
+  versionText: {
+    color: "#ABABAC",
   }
 });
 

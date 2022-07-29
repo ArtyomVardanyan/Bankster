@@ -1,19 +1,38 @@
-import { View, StyleSheet, Image, Text, SafeAreaView, ScrollView } from 'react-native';
+import { View, StyleSheet, Image, Text, TouchableHighlight } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import Friend from '../Friend';
+import Transactions from '../Transactions';
 
 const HomePage = ({ navigation }) => {
+    const friends = [
+        {
+            name: 'Vrdo',
+            imageUrl: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80'
+        },
+        {
+            name: 'Kyajo',
+            imageUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80'
+        }, {
+            name: 'Karlen',
+            imageUrl: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80'
+        },
+    ]
+
+
     return (
         <View style={styles.container}>
             <View style={styles.hello}>
-                <View style={styles.userInfo}>
-                    <Image
-                        style={styles.logo}
-                        source={{
-                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                        }}
-                    />
-                    <Text style={styles.name}>&nbsp;&nbsp;&nbsp;<Text style={styles.bold}>Hello,</Text> Vaxo</Text>
-                </View>
+                <TouchableHighlight onPress={() => { navigation.navigate('User') }}>
+                    <View style={styles.userInfo}>
+                        <Image
+                            style={styles.logo}
+                            source={{
+                                uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                            }}
+                        />
+                        <Text style={styles.name}>&nbsp;&nbsp;&nbsp;<Text style={styles.bold}>Hello,</Text> Vaxo</Text>
+                    </View>
+                </TouchableHighlight>
                 <Text onPress={() => { navigation.navigate('Login') }} style={styles.icon}>
                     <MaterialIcons name="logout" size={24} color="#5A5857" />
                 </Text>
@@ -32,112 +51,16 @@ const HomePage = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.friends}>
-                <View style={styles.friendsContet}>
-                    <Image
-                        style={styles.friendsLogo}
-                        source={{
-                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                        }}
-                    />
-                    <Text style={styles.friendsName}>Babken</Text>
-                </View>
-                <View style={styles.friendsContet}>
-                    <Image
-                        style={styles.friendsLogo}
-                        source={{
-                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                        }}
-                    />
-                    <Text style={styles.friendsName}>Babken</Text>
-                </View><View style={styles.friendsContet}>
-                    <Image
-                        style={styles.friendsLogo}
-                        source={{
-                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                        }}
-                    />
-                    <Text style={styles.friendsName}>Babken</Text>
-                </View><View style={styles.friendsContet}>
-                    <Image
-                        style={styles.friendsLogo}
-                        source={{
-                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                        }}
-                    />
-                    <Text style={styles.friendsName}>Babken</Text>
-                </View><View style={styles.friendsContet}>
-                    <Image
-                        style={styles.friendsLogo}
-                        source={{
-                            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                        }}
-                    />
-                    <Text style={styles.friendsName}>Babken</Text>
-                </View>
+                {friends.map(({ id, name, imageUrl }) => (
+                    <TouchableHighlight onPress={() => { navigation.navigate('Transfer') }}>
+                        <Friend key={id} name={name} imageUrl={imageUrl} />
+                    </TouchableHighlight>
+
+                ))}
             </View>
             <View style={styles.transactions}>
                 <Text style={styles.transactionsTitle}>Last <Text style={styles.transactionsSpan}>Transactions</Text></Text>
-                <SafeAreaView>
-                    <ScrollView>
-                        <View style={styles.transactionsElement}>
-                            <View style={styles.transactionsInfo}>
-                                <Image
-                                    style={styles.logo}
-                                    source={{
-                                        uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                                    }}
-                                />
-                                <Text style={styles.transactionsName}>&nbsp;&nbsp;&nbsp;Bagrat</Text>
-                            </View>
-                            <View>
-                                <Text style={styles.transactionsPrice}>- $450</Text>
-                            </View>
-                        </View>
-                        <View style={styles.transactionsElement}>
-                            <View style={styles.transactionsInfo}>
-                                <Image
-                                    style={styles.logo}
-                                    source={{
-                                        uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                                    }}
-                                />
-                                <Text style={styles.transactionsName}>&nbsp;&nbsp;&nbsp;Bagrat</Text>
-                            </View>
-                            <View>
-                                <Text style={styles.transactionsPrice}>- $450</Text>
-                            </View>
-                        </View>
-                        <View style={styles.transactionsElement}>
-                            <View style={styles.transactionsInfo}>
-                                <Image
-                                    style={styles.logo}
-                                    source={{
-                                        uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                                    }}
-                                />
-                                <Text style={styles.transactionsName}>&nbsp;&nbsp;&nbsp;Bagrat</Text>
-                            </View>
-                            <View>
-                                <Text style={styles.transactionsPrice}>- $450</Text>
-                            </View>
-                        </View>
-                        <View style={styles.transactionsElement}>
-                            <View style={styles.transactionsInfo}>
-                                <Image
-                                    style={styles.logo}
-                                    source={{
-                                        uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-                                    }}
-                                />
-                                <Text style={styles.transactionsName}>&nbsp;&nbsp;&nbsp;Bagrat</Text>
-                            </View>
-                            <View>
-                                <Text style={styles.transactionsPrice}>- $450</Text>
-                            </View>
-                        </View>
-                    </ScrollView>
-                </SafeAreaView>
-
+                <Transactions />
             </View>
         </View>
     )
@@ -152,11 +75,12 @@ const styles = StyleSheet.create({
         paddingTop: 50,
     },
     logo: {
-        width: 45,
-        height: 45,
+        width: 55,
+        height: 55,
     },
     name: {
-        color: '#fff'
+        color: '#fff',
+        fontSize: 18
     },
     hello: {
         width: 350,
@@ -236,28 +160,6 @@ const styles = StyleSheet.create({
     transactionsSpan: {
         color: '#5A5857',
 
-    },
-    transactionsElement: {
-        marginTop: 20,
-        padding: 20,
-        width: 350,
-        height: 75,
-        backgroundColor: '#1F1D1B',
-        borderRadius: 25,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    transactionsInfo: {
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    transactionsName: {
-        color: '#5A5857',
-    },
-    transactionsPrice: {
-        color: '#fff',
-        fontSize: 18,
     }
 });
 

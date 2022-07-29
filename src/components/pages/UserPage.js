@@ -1,9 +1,9 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { StyleSheet, Text, TextInput, View, Image, TouchableHighlight } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import Button from '../Button';
 import { useState } from 'react';
 
-export default function UserPage() {
+export default function UserPage({ navigation }) {
   const [value, setValue] = useState()
   const [name, setName] = useState()
 
@@ -14,18 +14,30 @@ export default function UserPage() {
 
   return (
     <View style={styles.container}>
-        <View style={styles.personInfo}>
-            <FontAwesome name="user-circle" color="white" />
-            <Text style={styles.anun}>{name}</Text>
+
+      <TouchableHighlight onPress={() => { navigation.navigate('Home') }}>
+        <View style={styles.header}>
+          <Ionicons name="md-chevron-back" size={24} color="white" />
+          <Text style={styles.user}>Home</Text>
         </View>
-        <View style={styles.changeName}>
-            <TextInput placeholder={"Change Your name"}
-                       placeholderTextColor={"#ABABAC"} 
-                       style={styles.changeNameInput}
-                       value={value}
-                       onChange={(e) => setValue(e.target.value)}/>
-            <Button onPress={Click}>Change name</Button>
-        </View>
+      </TouchableHighlight>
+      <View style={styles.personInfo}>
+        <Image
+          style={styles.icon}
+          source={{
+            uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+          }}
+        />
+        <Text style={styles.anun}>{name}</Text>
+      </View>
+      <View style={styles.changeName}>
+        <TextInput placeholder={"Enter your new username"}
+          placeholderTextColor={"#ABABAC"}
+          style={styles.changeNameInput}
+          value={value}
+          onChange={(e) => setValue(e.target.value)} />
+        <Button onPress={Click}>Change name</Button>
+      </View>
     </View>
   );
 }
@@ -36,31 +48,46 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: 'flex-start',
     flexDirection: 'column',
+    backgroundColor: '#120E0B',
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginTop: 70,
+    width: 350,
+  },
+  user: {
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: 23,
+  },
+  icon: {
+    width: 100,
+    height: 100,
   },
   personInfo: {
     marginTop: 200,
-    flex: 1,
-    alignItems: "center",
+    alignItems: "center"
   },
   anun: {
-      color: '#fff',
-      fontSize: 25,
-      marginTop: 10,
+    color: '#fff',
+    fontSize: 25,
+    marginTop: 10,
   },
   changeName: {
-      flex: 1,
-      marginBottom: 200,
-      alignItems: 'center',
+    flex: 1,
+    marginBottom: 10,
+    alignItems: 'center',
   },
+
   changeNameInput: {
-      width: 300,
-      height: 50,
-      fontSize: 16,
-      borderRadius: 3,
-      backgroundColor: '#1E2021',
-      borderRadius: 10,
-      paddingVertical: 10,
-      paddingHorizontal: 17,
-      marginBottom: 30,
-  }
+    width: 350,
+    backgroundColor: '#1E2021',
+    borderRadius: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 17,
+    marginBottom: 15,
+    color: '#fff'
+  },
 });
