@@ -1,9 +1,7 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { StyleSheet, Text, TextInput, View, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Button from '../Button';
 import { useState } from 'react';
-
 
 export default function UserPage() {
   const [value, setValue] = useState()
@@ -16,9 +14,17 @@ export default function UserPage() {
 
   return (
     <View style={styles.container}>
-      <Ionicons name="arrow-back" size={30} color="#fff" style={styles.backIcon} onPress={() => navigation.navigate('Home')}/>
+        <View style={styles.header}>
+            <Ionicons style={styles.heading} name="md-chevron-back" size={24} color="white" />
+            <Text style={styles.user}>User</Text>
+        </View>
         <View style={styles.personInfo}>
-            <FontAwesome name="user-circle" size={90} color="white" />
+            <Image
+                style={styles.icon}
+                source={{
+                    uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+                }}
+            />
             <Text style={styles.anun}>{name}</Text>
         </View>
         <View style={styles.changeName}>
@@ -40,14 +46,24 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     flexDirection: 'column',
   },
-  backIcon: {
-    alignSelf: 'flex-start',
-    top: 50,
+  header: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: 'flex-start',
+    marginTop: 70,
+  },
+  user: {
+      fontWeight: 'bold',
+      color: '#fff',
+      marginLeft: 80,
+  },
+  icon: {
+      width: 100,
+      height: 100,
   },
   personInfo: {
-    marginTop: 200,
     flex: 1,
-    alignItems: "center",
+    alignItems: "center"
   },
   anun: {
       color: '#fff',
@@ -60,7 +76,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
   },
   changeNameInput: {
-      width: 300,
+      width: 350,
       height: 50,
       fontSize: 16,
       borderRadius: 3,
