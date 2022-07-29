@@ -1,9 +1,12 @@
-import React from 'react'
+import { useState } from 'react'
 import { StyleSheet, View, Text, Image, TextInput } from 'react-native';
 import Button from '../Button'
 import { Ionicons } from '@expo/vector-icons';
 
-const TransferPage = ({navigation}) => {
+
+const TransferPage = ({ navigation }) => {
+    const [money, setMoney] = useState(20)
+
     return (
         <View style={styles.container}>
             <View style={styles.navigate}>
@@ -22,11 +25,11 @@ const TransferPage = ({navigation}) => {
                 <Text style={styles.nameText}>Your name</Text>
             </View>
             <View style={styles.money}>
-                <Text style={styles.money}>$100.00</Text>
+                <Text style={styles.money}>$54.567</Text>
             </View>
-            <TextInput placeholderTextColor="#ABABAC" placeholder='Visa' style={styles.input} />
+            <TextInput placeholderTextColor="#ABABAC" onChange={(e) => setMoney(e.target.value)} placeholder='Enter money' style={styles.input} />
             <View>
-                <Button style={styles.btn} onPress={() => navigation.navigate('Transfer')}>$100.00 Pay</Button>
+                <Button style={styles.btn} onPress={() => navigation.navigate('Transfer')}>${money} Pay</Button>
             </View>
         </View>
 
@@ -39,13 +42,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#120E0B',
         alignItems: 'center',
         width: '80%',
-      },
+    },
     navigate: {
         alignItems: 'center',
         marginTop: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width:350,
+        width: 350,
     },
     back: {
         fontWeight: 'bold',
@@ -59,24 +62,34 @@ const styles = StyleSheet.create({
         width: 475,
     },
     logo: {
-        width: 90,
-        height: 90,
+        width: 100,
+        height: 100,
         marginTop: 20,
         alignItems: 'center',
+        marginTop: 150,
     },
     name: {
         marginTop: 20,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 350,
     },
     nameText: {
         color: '#fff',
         fontWeight: 'bold',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 15,
+        backgroundColor: '#1F1D1B',
     },
     money: {
         alignItems: 'center',
         marginTop: 10,
         color: '#fff',
         flexDirection: 'row',
-        marginBottom: 100,
+        marginBottom: 10,
+        fontSize: 35,
     },
     input: {
         width: 350,

@@ -11,17 +11,17 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Transfer">
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Transfer">
           <Stack.Screen name="Login" component={LoginPage} />
           <Stack.Screen name="User" component={UserPage} />
           <Stack.Screen name="Transfer" component={TransferPage} />
           <Stack.Screen name="Register" component={RegisterPage} />
           <Stack.Screen name="Home" component={HomePage} />
         </Stack.Navigator>
-      </NavigationContainer>
-    </View>
+      </View>
+    </NavigationContainer>
   );
 }
 
